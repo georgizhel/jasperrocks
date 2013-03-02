@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app id="jasperrocks" 
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0"
+	metadata-complete="true">
+	<display-name>JasperServer Rocks</display-name>
+	<description>A reporting portlet running on multiple portals</description>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>JasperServerRocks</servlet-name>
+		<servlet-class>org.apache.pluto.container.driver.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-name</param-name>
+			<param-value>JasperServerRocks</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JasperServerRocks</servlet-name>
+		<url-pattern>/PlutoInvoker/JasperServerRocks</url-pattern>
+	</servlet-mapping>
+<!--
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:**/applicationContext.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>listing</servlet-name>
+		<servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>0</param-value>
+		</init-param>
+		<init-param>
+			<param-name>listings</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>listing</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+-->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+</web-app>

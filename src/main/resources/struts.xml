@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="freemarker.cache.TemplateCache" value="true"/>
+	<constant name="struts.action.excludePattern" value="/images/.*,/js/.*,/styles/.*"/>
+	<constant name="struts.custom.i18n.resources" value="i18n"/>
+	<constant name="struts.configuration.xml.reload" value="false"/>
+	<constant name="struts.convention.action.packages" value="ching.icecreaming.action"/>
+	<constant name="struts.convention.default.parent.package" value="package1"/>
+	<constant name="struts.convention.exclude.packages" value="ching.icecreaming.model.*,org.apache.*,com.opensymphony.xwork2.*"/>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.i18n.reload" value="false"/>
+	<constant name="struts.url.escapeAmp" value="false"/>
+	<package name="package1" extends="struts-portlet-default" namespace="/namespace1"/>
+	<package name="package2" extends="struts-default" namespace="/namespace1"/>
+</struts>
